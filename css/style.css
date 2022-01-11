@@ -36,15 +36,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 3.1rem;
     margin-bottom: 5px;
 }
 h2 {
-    font-size: 40px;
+    font-size: 2.3rem;
     margin-bottom: 40px;
 }
 h2 {
-    font-size: 25px;
+    font-size: 1.7rem;
+}
+
+p, span, a, button, .btn {
+    font-size: 1rem;
 }
 
 .container {
@@ -84,32 +88,6 @@ section.bg-gray {
     padding-top: 70px;
     padding-bottom: 70px;
 }
-
-@media (min-width: 1440px) {
-    .left-header {
-        padding: 10px 0 !important;
-    }
-    .header-content {
-        border-radius: 8px;
-    }
-    main {
-        margin-bottom: 10px;
-    }
-}
-
-
-@media (max-width: 1440px) {
-    section {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        padding-left: 50px;
-    }
-    footer {
-        margin: 0 !important;
-        border-radius: 0 !important;
-    }
-}
-
 
 .tag {
     padding: 5px 15px;
@@ -170,7 +148,7 @@ section.bg-gray {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 1.9rem;
     font-weight: 900;
     box-shadow: 0 0 0 14px rgba(var(--black-rgb), 0.05);
     background-color: var(--white);
@@ -276,4 +254,35 @@ footer {
 }
 footer h4 {
     margin: 0;
+}
+
+
+
+
+@media (min-width: 1440px) {
+    .left-header {
+        padding: 10px 0 !important;
+    }
+    .header-content {
+        border-radius: 8px;
+    }
+    main {
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 1440px) {
+    section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+    }
+    footer {
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    html {
+        font-size: 14px;
+    }
 }
