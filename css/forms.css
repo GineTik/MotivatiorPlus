@@ -1,0 +1,62 @@
+input, textarea {
+    border: 0;
+    border-radius: 8px;
+}
+
+input, textarea {
+    padding: 25px;  
+    font-size: 15px;
+    background-color: var(--light-gray);
+    outline: 0 solid var(--light-gray);
+
+    margin-bottom: 15px;
+
+    transition: .3s;
+}
+input:focus,
+textarea:focus {
+    outline: 5px solid var(--light-gray);
+    background-color: var(--white);
+    padding: 15px 25px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.last-line {
+    display: flex;
+    justify-content: space-between;
+}
+.last-line div {
+    display: flex;
+    align-items: center;
+}
+.last-line span {
+    color: var(--blue);
+}
+.captcha {
+    margin-right: 10px;
+}
+.captcha input {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    padding-right: 0px;
+    font-size: 18px;
+    margin: 0;
+    margin-left: 10px;
+    text-align: center;
+}
+form button {
+    height: 60px;
+}
+form button:focus {
+    outline: 3px solid var(--blue);
+}

@@ -1,0 +1,74 @@
+.btn-up-container {
+    height: 100%;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.btn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--light-blue);
+    border-radius: 8px;
+    border: 0;
+
+    color: var(--blue);
+    font-size: 15px;
+    font-weight: 800;
+
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: .2s transform;
+}
+.btn > span {
+    margin-left: 5px;
+    margin-right: 50px;
+    width: 100%;
+}
+.btn > ion-icon {
+    font-size: 24px;
+}
+.btn:hover {
+    transform: translateY(-5px);
+}
+.btn-hint,
+.btn-hint--right {
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    max-width: 330px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.btn-hint--right {
+    text-align: right;
+    max-width: 350px;
+}
+
+.btn-group--right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-up {
+    position: sticky;
+    right: 15px;
+    bottom: 15px;
+}
+
+.btn-text-center {
+    text-align: center;
+}
+
+.btn:focus {
+    outline: 3px solid var(--blue);
+}
