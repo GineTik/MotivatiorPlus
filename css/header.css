@@ -34,6 +34,11 @@
 }
 
 
+.logo img {
+    height: 30px;
+}
+
+
 ion-icon[name*="menu"] {
     font-size: 30px;
     color: var(--white);
@@ -144,6 +149,11 @@ ion-icon[name*="menu"] {
     transform: scale(1);
     transition: .15s;
     margin-bottom: 5px;
+}
+.navbar-text {
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 /* links hover */
 .navbar-link:not(.active):hover,
