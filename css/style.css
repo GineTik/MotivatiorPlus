@@ -194,6 +194,9 @@ section.bg-gray {
     margin-bottom: 25px;
 }
 
+.services {
+    max-width: 990px;
+}
 .section-services {
     display: inline-block;
 }
@@ -395,6 +398,11 @@ footer h4 {
     }
 }
 
+@media (max-width: 1350px) {
+    .advantage:not(:last-child) {
+        margin-right: 40px;
+    }
+}
 
 @media (max-width: 1190px) {
     .more_services {
@@ -487,7 +495,7 @@ footer h4 {
         justify-content: center;
     }
 
-    h2, h3, h4, h5, h6 {
+    h2 {
         text-align: center;
     }
     .under-development h2 {
