@@ -43,8 +43,8 @@ h2 {
     font-size: 2.3rem;
     margin-bottom: 40px;
 }
-h2 {
-    font-size: 1.7rem;
+h3 {
+    font-size: 1.5rem;
 }
 
 p, span, a, button, .btn {
@@ -65,18 +65,22 @@ p, span, a, button, .btn {
 main {
     width: 100%;
     display: flex;
+    flex-direction: column;
 }
 .main-content {
     background: var(--main-background);
 
     width: 100%;
     height: 100%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 section {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    padding-left: 80px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 5rem;
 }
 section.bg-gray {
     background-color: var(--light-gray);
@@ -85,8 +89,8 @@ section.bg-gray {
     margin-right: -75px;
     padding-right: 75px;
     
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .tag {
@@ -113,14 +117,12 @@ section.bg-gray {
 
     margin-top: 50px;
     margin-bottom: 50px;
+
+    position: relative;
 }
 .info > span {
     max-width: 750px;
 }
-.info > img {
-    margin-left: 70px;
-}
-
 
 .steps {
     margin-top: 40px;
@@ -172,23 +174,31 @@ section.bg-gray {
 
 .advantages, .services {
     display: flex;
+    flex-wrap: wrap;
+
+    max-width: 1200px;
+    width: 100%;
 }
 .advantage, .service {
     width: 33%;
 }
-.advantage:not(:first-child) {
-    margin-left: 80px;
+.advantage {
+    min-width: 300px;
+    max-width: 320px;
+    margin-bottom: 30px;
+}
+.advantage:not(:last-child) {
+    margin-right: 80px;
 }
 .advantage img {
     margin-bottom: 25px;
 }
 
-
 .section-services {
     display: inline-block;
 }
-.service:not(:first-child) {
-    margin-left: 15px;
+.service:not(:nth-child(3)) {
+    margin-right: 15px;
 }
 .service {
     margin-bottom: 15px;
@@ -196,17 +206,18 @@ section.bg-gray {
     background-color: var(--light-blue);
 
     width: 320px;
-    height: 150px;
+    min-height: 150px;
     padding: 30px;
     
     display: flex;
     justify-content: space-between;
 
     cursor: pointer;
+    transition: .15s transform;
 }
 .service h3 {
     color: var(--black);
-    width: 70%;
+    /* width: 70%; */
 }
 .service ion-icon {
     color: var(--blue);
@@ -226,34 +237,131 @@ section.bg-gray {
     width: 100%;
 }
 
+.services_with_cities {
+    margin-top: 30px;
+
+    /* display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap; */
+
+    /* column-count: auto;
+    column-width: 300px;
+    column-gap: 15px; */
+}
+.services_with_cities .service {
+    padding: 10px;
+    flex-direction: column;
+    border-radius: 14px;
+    margin-left: 0;
+    display: block;
+}
+.service .service-content {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    color: var(--black);
+}
+.service-content p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.services_with_cities .cities {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: var(--blue);
+}
+.service:hover {
+    transform: scale(1.05);
+}
+.service-content ion-icon {
+    margin-top: 10px;
+}
 
 .order {
     display: flex;
     width: 100%;
+
+    position: relative;
 }
 .order form {
     width: 100%;
+    max-width: 800px;
+
+    z-index: 1;
 }
-.order img {
-    margin-left: 100px;
+.right-img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+
+    z-index: 0;
 }
+@media (max-width: 1300px) {
+    .right-img {
+        opacity: 0;
+    }
+}
+
+.under-development {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
+    margin-top: -50px;
+}
+.under-development h2 {
+    color: rgba(var(--black-rgb), .2);
+    margin-bottom: 0;
+    font-size: 60px;
+}
+.under-development span {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 90%;
+}
+.text-with-border {
+    color: var(--white);
+    text-shadow: -1px 1px 0 var(--black),
+                1px 1px 0 var(--black),
+                1px -1px 0 var(--black),
+                -1px -1px 0 var(--black);
+}
+
+
+.portfolio-list {
+    margin-top: 50px;
+}
+.portfolio-list {
+    margin-top: 50px;
+}
+
 
 
 footer {
-    width: calc(100% + 80px);
+    width: calc(100% + 75px);
     background-color: var(--dark);
     color: var(--white);
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px;
 
-    padding-right: 90px;
+    padding-right: 85px;
     border-radius: 8px;
     margin-left: 2px;
 }
 footer h4 {
     margin: 0;
+    font-size: 1rem;
+    height: 1.1rem;
 }
 
 
@@ -284,5 +392,148 @@ footer h4 {
     }
     html {
         font-size: 14px;
+    }
+}
+
+
+@media (max-width: 1190px) {
+    .more_services {
+        width: 320px !important;
+        height: 150px;
+    }
+    .more_services .btn {
+        height: 100%;
+    }
+    .more_services .btn span {
+        font-size: 1.5rem;
+        margin-right: 0;
+    }
+    .more_services .btn ion-icon {
+        font-size: 2.5rem;
+    }
+    .service:nth-child(3) {
+        margin-right: 15px;
+    }
+    .service:nth-child(2) {
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .step {
+        width: 100%;
+        border-radius: 12px;
+    }
+    .step h3 {
+        margin-left: 25px;
+        text-align: left;
+    }
+    .step::before {
+        display: none;
+    }
+    .step::after {
+        content: attr(--num);
+
+        position: absolute;
+        left: 35px;
+        top: 35px;
+
+        color: rgb(255, 83, 83);
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+    .step:nth-child(2n+1)::before {
+        left: 0;
+    }
+    .step:nth-child(2n)::before {
+        right: 0;
+    }
+
+    .service,
+    .more_services {
+        width: 280px !important;
+    }
+
+    section {
+        padding-right: 10px !important;
+    }
+
+    .order .last-line > span {
+        display: none;
+    }
+    .order .last-line > div {
+        margin-left: auto;
+    }
+
+    .advantages {
+        justify-content: center;
+    }
+    .advantage {
+        margin-right: 0 !important;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+    }
+    .advantage h3,
+    .advantage p {
+        text-align: center;
+    }
+    .advantage img {
+        width: 150px;
+    }
+
+    .services {
+        justify-content: center;
+    }
+
+    h2, h3, h4, h5, h6 {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 760px) {
+    section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    section.bg-gray {
+        padding-right: 20px !important;
+        margin-right: 0;
+    }
+    .btn-up-container {
+        display: none !important;
+    }
+    .advantages {
+        width: 300px;
+        margin-right: 0;
+        margin: auto;
+    }
+
+    footer {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 620px) {
+    .service {
+        margin-right: 0 !important;
+    }
+    .advantage:last-child {
+        margin-bottom: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+    h2 {
+        font-size: 2.1rem;
+        margin-bottom: 40px;
+    }
+    h3 {
+        font-size: 1.4rem;
     }
 }

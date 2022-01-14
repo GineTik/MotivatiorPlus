@@ -60,3 +60,9 @@ form button {
 form button:focus {
     outline: 3px solid var(--blue);
 }
+
+@media (max-width: 760px) {
+    .captcha input {
+        padding-right: 10px;
+    }
+}

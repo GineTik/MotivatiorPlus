@@ -120,10 +120,12 @@ ion-icon[name*="menu"] {
     transition: .3s;
     white-space: nowrap;
 }
+.left-header.active .navbar-text,
 .header-content:hover .navbar-text {
     padding-left: 20px;
     opacity: 1;
 }
+.left-header.active .navbar-text,
 .header-content:hover .navbar-link {
     padding-left: 10px;
     transition-delay: .1s;
@@ -227,4 +229,60 @@ ion-icon[name*="menu"] {
 .navbar-link.active::after {
     bottom: -50px;
     box-shadow: 25px -25px 0 0 var(--white);
+}
+
+.menu-btn {
+    display: none;
+    align-items: center;
+
+    color: var(--white);
+    font-size: 30px;
+}
+ion-icon[name*='close'] {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    .left-header {
+        display: flex;
+        flex-direction: column;
+
+        position: fixed;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        padding-left: 20px;
+        top: 0;
+        left: 0;
+
+        background-color: var(--dark-blue);
+    }
+    .left-header.active {
+        height: 100%;
+    }
+    .header-content {
+        display: none;
+
+        width: 100%;
+        height: 100%;
+    }
+    .header-content:hover {
+        width: 100%;
+    }
+    main {
+        margin-top: 20px;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .navbar-link.active {
+        width: 100%;
+        border-radius: 100px;
+    }
+    .navbar-link.active::before,
+    .navbar-link.active::after {
+        display: none;
+    }
 }
