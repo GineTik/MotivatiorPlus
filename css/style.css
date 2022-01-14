@@ -490,6 +490,9 @@ footer h4 {
     h2, h3, h4, h5, h6 {
         text-align: center;
     }
+    .under-development h2 {
+        text-align: left;
+    }
 }
 
 
