@@ -322,7 +322,7 @@ section.bg-gray {
 .under-development h2 {
     color: rgba(var(--black-rgb), .2);
     margin-bottom: 0;
-    font-size: 60px;
+    font-size: 4rem;
 }
 .under-development span {
     font-weight: 900;
@@ -546,5 +546,9 @@ footer h4 {
     }
     h3 {
         font-size: 1.4rem;
+    }
+
+    .under-development h2 {
+        font-size: 3.5rem;
     }
 }
