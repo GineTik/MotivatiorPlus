@@ -73,7 +73,7 @@ class Audio {
         this.timeField = timeField;
         this.body.appendChild(this.timeField);
 
-        setTimeout(this.audioTick.bind(this), 200);
+        setTimeout(this.audioTick.bind(this), 500);
     }
 
     enableAudio() {
