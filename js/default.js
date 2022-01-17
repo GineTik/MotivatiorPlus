@@ -113,7 +113,7 @@ class Audio {
         this.timeField = timeField;
         this.body.appendChild(this.timeField);
 
-        setTimeout(this.audioTick.bind(this), 500);
+        setTimeout(this.audioTick.bind(this), 1000);
     }
 
     enableAudio() {
@@ -139,6 +139,12 @@ class Audio {
     }
 
     audioTick() {
+        if (this.audio.ended == true) {
+            this.disableAudio();
+            this.audio.load();
+            setTimeout(this.audioTick.bind(this), 500);
+        }
+
         var currentProgessTime = new Date(this.audio.currentTime * 1000);
 
         var mm1 = currentProgessTime.getMinutes();
