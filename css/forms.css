@@ -1,9 +1,9 @@
-input, textarea {
+input:not([type="range"]), textarea {
     border: 0;
     border-radius: 8px;
 }
 
-input, textarea {
+input:not([type="range"]), textarea {
     padding: 25px;  
     font-size: 15px;
     background-color: var(--light-gray);
@@ -13,7 +13,7 @@ input, textarea {
 
     transition: .3s;
 }
-input:focus,
+input:not([type="range"]):focus,
 textarea:focus {
     outline: 5px solid var(--light-gray);
     background-color: var(--white);

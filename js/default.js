@@ -88,6 +88,8 @@ function createAudio() {
 
 
 class Audio {
+    static selectedAudio = null;
+
     constructor(body) {
         this.state = "stopped";
         this.body = body
@@ -113,7 +115,21 @@ class Audio {
         this.timeField = timeField;
         this.body.appendChild(this.timeField);
 
+        var titleField = document.createElement("span");
+        titleField.classList.add("audio-title-field");
+        titleField.innerHTML = this.body.dataset.title;
+        this.titleField = titleField;
+        this.body.appendChild(this.titleField);
+
+        var bgImage = document.createElement("img");
+        bgImage.classList.add("audio-bg-image");
+        bgImage.src = this.body.dataset.img;
+        this.bgImage = bgImage;
+        this.body.appendChild(this.bgImage);
+
         this.loadAudio();
+
+        Audio.selectedAudio = this;
     }
 
     enableAudio() {
@@ -126,6 +142,11 @@ class Audio {
         this.audioTickInterval = setInterval(this.audioTick.bind(this), 1000);
 
         this.body.onclick = this.disableAudio.bind(this);
+
+        if (Audio.selectedAudio != this) {
+            Audio.selectedAudio.disableAudio();
+        }
+        Audio.selectedAudio = this;
     }
     disableAudio() {
         this.state = "stopped"
@@ -160,7 +181,7 @@ class Audio {
             }
             if (ss2 < 10) ss2 = '0' + ss2;
 
-            this.timeField.innerHTML = `0:0 / ${mm2}:${ss2}`;
+            this.timeField.innerHTML = `00:00 / ${mm2}:${ss2}`;
         }
         setTimeout(loading.bind(this), 100);
     }
@@ -168,6 +189,7 @@ class Audio {
     audioTick() {
         if (this.audio.ended == true) {
             this.loadAudio();
+            return;
         }
 
         var currentProgessTime = new Date(this.audio.currentTime * 1000);

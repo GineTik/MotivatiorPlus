@@ -9,16 +9,41 @@
 
     position: relative;
 }
+.audio * {
+    z-index: 1;
+    color: var(--light-gray);
+}
+.audio::before {
+    content: url(data-img);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    background-size: cover;
+    background-position: center center;
+
+    filter: brightness(80%);
+    opacity: .2;
+    z-index: 0;
+}
 
 .audio-play-button {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--light-gray);
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 1;
 }
 .audio-play-button ion-icon {
     font-size: 35px;
@@ -27,10 +52,40 @@
     margin-right: -4px;
 }
 
-.audio-time-field {
+.audio-title-field,
+.audio-time-field,
+.audio-volume {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    /* transform: translate(-50%, 0); */
     font-size: 18px;
+}
+
+.audio-time-field {
+    bottom: 20px;
+    right: 20px;
+}
+
+.audio-title-field {
+    top: 15px;
+    left: 0;
+
+    padding: 0 20px;
+    white-space: nowrap;
+
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    /* color: rgba(var(--black-rgb), 0.0); */
+
+    transition: .3s color;
+}
+
+.audio-bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    /* opacity: .3; */
+    filter: brightness(20%);
 }
