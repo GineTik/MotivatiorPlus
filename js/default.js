@@ -113,7 +113,7 @@ class Audio {
         this.timeField = timeField;
         this.body.appendChild(this.timeField);
 
-        setTimeout(this.audioTick.bind(this), 1000);
+        this.loadAudio();
     }
 
     enableAudio() {
@@ -138,11 +138,36 @@ class Audio {
         this.body.onclick = this.enableAudio.bind(this);
     }
 
+    loadAudio() {
+        this.disableAudio();
+        this.audio.load();
+        
+        var loading = () => {
+
+            var audioLength = new Date(this.audio.duration * 1000);
+
+            var mm2 = audioLength.getMinutes();
+            if (isNaN(mm2)) {
+                setTimeout(loading.bind(this), 100);
+                return;
+            }
+            if (mm2 < 10) mm2 = '0' + mm2;
+
+            var ss2 = audioLength.getSeconds();
+            if (isNaN(ss2)) {
+                setTimeout(loading.bind(this), 100);
+                return;
+            }
+            if (ss2 < 10) ss2 = '0' + ss2;
+
+            this.timeField.innerHTML = `0:0 / ${mm2}:${ss2}`;
+        }
+        setTimeout(loading.bind(this), 100);
+    }
+
     audioTick() {
         if (this.audio.ended == true) {
-            this.disableAudio();
-            this.audio.load();
-            setTimeout(this.audioTick.bind(this), 500);
+            this.loadAudio();
         }
 
         var currentProgessTime = new Date(this.audio.currentTime * 1000);
