@@ -21,7 +21,47 @@ window.onload = function() {
     }
 
     createAudio();
+
+    document.addEventListener("submit", sendForm);
 }
+
+
+function sendForm(e) {
+    e.preventDefault();
+
+    e.target.text2.value = e.target.text2.value.replace(" ", "");
+    if (e.target.text2.value == "") {
+        e.target.text2.style.outline = "5px solid rgba(255,0,0, 0.2)";
+        e.target.text2.focus();
+
+        return;
+    }
+
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function() {
+        console.log(this.status)
+        if (this.status == 200) {
+            window.open("http://127.0.0.1:5500/pages/send_successfully.html")
+        }
+        document.querySelector("form .btn ion-icon").setAttribute("name", "arrow-forward");
+    }
+    xhr.open("POST", "https://postmail.invotes.com/send", true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        "access_token": "vrzbswvhb2xmhmjpoco1qhzj",
+        "subject": "Замовлення від '" + e.target.text1.value + "'",
+        "text": `
+Клієнт: ${e.target.text1.value}
+
+Для зворотнього зв'язку: ${e.target.text2.value}
+
+Повідомлення: 
+${e.target.text3.value}
+        `
+    }));
+    document.querySelector("form .btn ion-icon").setAttribute("name", "time");
+}
+
 
 function classIsFind(elem, className) {
     return elem.classList.contains(className);
