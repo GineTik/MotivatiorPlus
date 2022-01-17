@@ -1,0 +1,36 @@
+.audio {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.audio-play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.audio-play-button ion-icon {
+    font-size: 35px;
+}
+.audio-play-button ion-icon[name="play"] {
+    margin-right: -4px;
+}
+
+.audio-time-field {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    /* transform: translate(-50%, 0); */
+    font-size: 18px;
+}
