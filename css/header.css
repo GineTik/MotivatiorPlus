@@ -111,7 +111,15 @@ ion-icon[name*="menu"] {
 .navbar-link > ion-icon {
     font-size: 30px;
     min-width: 30px;
+
+    opacity: 1;
+    transition: .3s opacity;
 }
+
+.header-content:hover .navbar-link:not(:hover):not(.active) > ion-icon {
+    opacity: .7;
+}
+
 .navbar-text {
     padding-left: 30px;
     opacity: 0;
