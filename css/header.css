@@ -117,7 +117,7 @@ ion-icon[name*="menu"] {
 }
 
 .header-content:hover .navbar-link:not(:hover):not(.active) > ion-icon {
-    opacity: .7;
+    opacity: .8;
 }
 
 .navbar-text {

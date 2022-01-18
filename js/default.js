@@ -98,6 +98,7 @@ class Audio {
         var audio = document.createElement("audio");
         audio.setAttribute("src", this.body.dataset.src);
         this.audio = audio;
+        this.audio.volume = 0.70;
         this.body.appendChild(this.audio);
 
         var playButton = document.createElement("div");
