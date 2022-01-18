@@ -311,7 +311,7 @@ section.bg-gray {
 }
 @media (max-width: 1200px) {
     .right-img {
-        width: 250px;
+        width: 280px !important;
     }
 }
 @media (max-width: 1000px) {
@@ -513,6 +513,10 @@ footer h4 {
     }
     html {
         font-size: 14px;
+    }
+    .right-img {
+        width: 340px;
+        margin-left: 50px;
     }
 }
 
