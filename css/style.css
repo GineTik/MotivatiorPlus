@@ -497,8 +497,6 @@ footer h4 {
     object-fit: cover;
 }
 
-
-
 @media (min-width: 1440px) {
     .left-header {
         padding: 10px 0 !important;

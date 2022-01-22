@@ -22,7 +22,45 @@ window.onload = function() {
 
     createAudio();
 
+    setTimeout(showHeaderHint, 10000);
+
     document.addEventListener("submit", sendForm);
+}
+
+
+
+function showHeaderHint() {
+    var hints = document.querySelectorAll(".header-hint");
+    hints.forEach((hint) => {
+        hint.animate([
+            // keyframes
+            { opacity: '0' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '1' },
+            { opacity: '0' }
+        ], {
+            // timing options
+            duration: 10000,
+            iterations: 1
+        });
+    })
 }
 
 

@@ -36,10 +36,23 @@
                         <ion-icon name="home-outline"></ion-icon>
                         <span class="navbar-text">головна</span>
                     </a>
-                    <a href="pages/services.html" class="navbar-link">
+                    <div href="pages/services.html" class="navbar-link" onclick="window.location = (this.getAttribute('href'))">
                         <ion-icon name="albums-outline"></ion-icon>
                         <span class="navbar-text">послуги</span>
-                    </a>
+
+                        <div class="navbar__dropdown">
+                            <a href="pages/services/service_1.html" class="navbar__link">Зовнішння реклама</a>
+                            <a href="pages/services/service_2.html" class="navbar__link">Аудіореклама</a>
+                            <a href="pages/services/service_3.html" class="navbar__link">Відеореклама</a>
+                            <a href="pages/services/service_4.html" class="navbar__link">Розробка матеріалу для реклами</a>
+                        </div>
+
+                        <div class="header-hint">
+                            <div class="header-hint__content">
+                                <span class="header-hint__text">послуги</span>
+                            </div>
+                        </div>
+                    </div>
                     <a href="pages/portfolio.html" class="navbar-link">
                         <ion-icon name="apps-outline"></ion-icon>
                         <span class="navbar-text">портфоліо</span>
